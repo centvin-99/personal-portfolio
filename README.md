@@ -2,15 +2,11 @@
 
 A responsive personal portfolio website built with HTML, CSS, and JavaScript to showcase my skills, projects, and contact information.
 
----
+
 
 ## Live Demo
 
 🔗 [View Live Site](https://centvin-99.github.io/personal-portfolio)
-
----
-
-## Screenshots
 
 
 
@@ -49,3 +45,4 @@ Building this project taught me how to structure a multi-section webpage properl
 ## Author
 
 **Vincent** — [@Centvin-99](https://github.com/Centvin-99)
+
