@@ -40,9 +40,20 @@ This was my first major frontend project. I built it to have a real place on the
 
 Building this project taught me how to structure a multi-section webpage properly and think about layout from the start. I got hands-on experience with CSS Flexbox for both the navbar and the hero section, and learned how media queries work in practice — not just in theory. Implementing the hamburger menu helped me understand how JavaScript and CSS classes work together to create interactive UI elements. I also learned how to create a seamless CSS animation for the marquee, and why duplicating cards is necessary for the loop to look smooth.
 
+## Folder structure
+  personal-portfolio/
+  images/
+     About.png
+  README.md
+  index.html
+  script.js
+  style.css
+    
+
 
 
 ## Author
 
 **Vincent** — [@Centvin-99](https://github.com/Centvin-99)
+
 
