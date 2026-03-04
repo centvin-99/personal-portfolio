@@ -1,0 +1,554 @@
+/* ============================================================
+   style.css — Vincent's Portfolio Stylesheet
+   Sections (in order):
+   1. Reset & Base
+   2. Header & Navbar
+   3. Hamburger Menu
+   4. Hero Section
+   5. About Section
+   6. Skills Section
+   7. Projects Section & Marquee
+   8. Contact Section
+   9. Footer
+   10. Media Queries (Mobile Responsive)
+============================================================ */
+
+
+/* ============================================================
+   1. RESET & BASE
+   Removes default browser spacing and sets global defaults
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;        /* Padding won't push elements outside their width */
+  font-family: 'Poppins', sans-serif;
+}
+
+ul {
+  list-style: none;              /* Remove default bullet points */
+}
+
+a {
+  text-decoration: none;         /* Remove default underline from links */
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  width: 100%;                   /* Images scale within their parent container */
+}
+
+body {
+  background: #0a0f1c;          /* Dark navy background */
+  color: floralwhite;            /* Off-white default text */
+}
+
+
+/* ============================================================
+   2. HEADER & NAVBAR
+============================================================ */
+
+header {
+  background: black;
+}
+
+/* Tagline text below the navbar */
+header h3 {
+  text-align: center;
+  color: floralwhite;
+  font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 10px 0;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+/* Main navbar layout: logo on the left, links on the right */
+header .navbar {
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(220, 38, 38, 0.5);
+  position: relative;           /* Needed so the mobile menu drops below it correctly */
+}
+
+/* Logo styling */
+.nav-logo {
+  color: whitesmoke;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.logo-text {
+  color: whitesmoke;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+/* The red "cent" part of the logo */
+.logo-highlight {
+  color: #CC003A;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Desktop nav links laid out in a row */
+.nav-menu {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Individual nav link style */
+.nav-link {
+  padding: 10px;
+  font-size: medium;
+  font-weight: 600;
+  font-family: Courier;
+  color: white;
+  border-radius: 8px;
+  transition: 0.3s ease;        /* Smooth color change on hover */
+}
+
+.nav-link:hover {
+  color: #E1063A;
+  background: rgba(225, 6, 58, 0.15);
+  text-decoration: underline;
+  text-decoration-color: #CC003A;
+}
+
+
+/* ============================================================
+   3. HAMBURGER MENU
+   Hidden on desktop; shown on mobile screens via media query.
+   The three bars animate into an X when the menu is open.
+============================================================ */
+.hamburger {
+  display: none;                 /* Hidden on desktop */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+/* Each bar of the hamburger icon */
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+/* When .open is added by JS, the bars rotate to form an X */
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;                   /* Middle bar fades out */
+}
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ============================================================
+   4. HERO SECTION
+   Full intro area with name, short bio, and profile image
+============================================================ */
+.hero {
+  padding: 40px 20px;
+}
+
+/* Side-by-side layout: text on left, image on right */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin: auto;
+}
+
+.hero-text h2 {
+  margin-bottom: 8px;
+  color: white;
+}
+
+/* Name displayed in red with a monospace font */
+.hero-text h1 {
+  margin-bottom: 20px;
+  color: darkred;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+/* Profile image: fixed width, red border, subtle shadow */
+.hero-image img {
+  width: 35vw;
+  border-radius: 12px;
+  border: 2px solid #CC003A;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Italic CTA text above the contact button */
+.cta-text {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: darkgoldenrod;
+  font-style: italic;
+}
+
+/* "Contact Me" button */
+.cta-button {
+  display: inline-block;
+  padding: 6px 8px;
+  margin-top: 6px;
+  background-color: #E1063A;
+  box-shadow: 0 0 10px rgba(225, 6, 58, 0.6);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #CC003A;
+  transform: scale(1.05);       /* Slight grow on hover */
+}
+
+
+/* ============================================================
+   5. ABOUT SECTION
+============================================================ */
+.about {
+  padding: 40px 20px;
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* Red underline accent beneath section titles */
+.about-title::after {
+  content: '';
+  display: block;
+  width: 10%;
+  height: 3px;
+  background-color: #CC003A;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Constrain paragraph width for readability */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;             /* Comfortable reading line height */
+}
+
+
+/* ============================================================
+   6. SKILLS SECTION
+============================================================ */
+.skills {
+  padding: 40px 20px;
+}
+
+.skills-title {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Same red underline accent used across all section titles */
+.skills-title::after {
+  content: '';
+  display: block;
+  width: 10%;
+  height: 3px;
+  background-color: #CC003A;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Cards sit side by side, wrapping on smaller screens.
+   align-items: stretch makes all cards grow to the same height
+   regardless of how much text is inside them. */
+.skills-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Individual skill card — flex: 1 1 200px means each card
+   starts at 200px wide but grows equally to fill available space,
+   keeping them all the same width AND height. */
+.skills-card {
+  flex: 1 1 200px;
+  max-width: 220px;
+  border: 2px solid #CC003A;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+
+/* ============================================================
+   7. PROJECTS SECTION & MARQUEE ANIMATION
+   Cards scroll automatically from right to left in an infinite loop.
+   The track holds 3 sets of cards so the animation looks seamless.
+============================================================ */
+.projects {
+  padding: 40px 20px;
+}
+
+.projects-title {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.projects-title::after {
+  content: '';
+  display: block;
+  width: 10%;
+  height: 3px;
+  background-color: #CC003A;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Outer wrapper: hides anything that scrolls outside the visible area */
+.projects-marquee {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Inner track: all cards in a single row, wider than the screen */
+.projects-track {
+  display: flex;
+  width: max-content;
+  animation: scrollProjects 25s linear infinite;
+}
+
+/* Pause scrolling when the user hovers or touches the track */
+.projects-track:hover,
+.projects-track:focus-within {
+  animation-play-state: paused;
+}
+
+/* Individual project card */
+.project-card {
+  width: 230px;
+  border: 2px solid skyblue;
+  padding: 12px;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Keyframe: slides the track left by one-third of its total width.
+   Because there are 3 identical sets of cards, -33.33% = exactly one set,
+   making the loop invisible to the eye. */
+@keyframes scrollProjects {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.33%);
+  }
+}
+
+
+/* ============================================================
+   8. CONTACT SECTION
+============================================================ */
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.contact-title::after {
+  content: '';
+  display: block;
+  width: 10%;
+  height: 3px;
+  background-color: #CC003A;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.contact-text {
+  color: #ccc;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+/* Stack form fields vertically */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+/* Shared style for text input, email input, and textarea */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: 2px solid rgba(220, 38, 38, 0.5);
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  resize: none;                  /* Prevents the textarea from being manually resized */
+}
+
+/* Submit button */
+.contact-button {
+  padding: 12px 20px;
+  background-color: #E1063A;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #CC003A;
+  transform: scale(1.05);
+}
+
+/* Success message shown after form submission.
+   Hidden by default; JS sets display: block after submit. */
+.contact-feedback {
+  margin-top: 15px;
+  color: #4CAF50;               /* Green to signal success */
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  display: none;
+}
+
+
+/* ============================================================
+   9. FOOTER
+============================================================ */
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  border-top: 2px solid #CC003A;
+}
+
+.footer-text {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+
+/* ============================================================
+   10. MEDIA QUERIES — Mobile Responsive (max-width: 768px)
+   These rules override the desktop styles for smaller screens
+============================================================ */
+@media (max-width: 768px) {
+
+  /* Show the hamburger button on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide the nav links by default on mobile.
+     They become visible when .open is toggled by JS. */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;                  /* Drop just below the navbar */
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 20px;
+    border-bottom: 1px solid rgba(220, 38, 38, 0.5);
+    gap: 10px;
+    z-index: 100;               /* Sits on top of other content */
+  }
+
+  /* Class added by JS when hamburger is clicked */
+  .nav-menu.open {
+    display: flex;
+  }
+
+  /* Stack hero text and image vertically on mobile */
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  /* Make profile image smaller and centered on mobile */
+  .hero-image img {
+    width: 60vw;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text h2 {
+    font-size: 24px;
+  }
+
+  .cta-text {
+    font-size: 14px;
+  }
+
+  /* Stack about section vertically on mobile */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+}
