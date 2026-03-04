@@ -75,7 +75,7 @@ header .navbar {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(220, 38, 38, 0.5);
-  position: relative;           /* Needed so the mobile menu drops below it correctly */
+  position: relative;           /* we need this so the mobile menu drops below it correctly */
 }
 
 /* Logo styling */
@@ -112,7 +112,7 @@ header .navbar {
   font-family: Courier;
   color: white;
   border-radius: 8px;
-  transition: 0.3s ease;        /* Smooth color change on hover */
+  transition: 0.3s ease;        /* Smooth color change while hovering */
 }
 
 .nav-link:hover {
@@ -552,3 +552,4 @@ header .navbar {
   }
 
 }
+
