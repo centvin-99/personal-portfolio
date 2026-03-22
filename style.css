@@ -55,6 +55,11 @@ body {
 
 header {
   background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 /* Tagline text below the navbar */
@@ -75,7 +80,7 @@ header .navbar {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(220, 38, 38, 0.5);
-  position: relative;           /* we need this so the mobile menu drops below it correctly */
+  position: relative;           /* Needed so the mobile menu drops below it correctly */
 }
 
 /* Logo styling */
@@ -112,7 +117,7 @@ header .navbar {
   font-family: Courier;
   color: white;
   border-radius: 8px;
-  transition: 0.3s ease;        /* Smooth color change while hovering */
+  transition: 0.3s ease;        /* Smooth color change on hover */
 }
 
 .nav-link:hover {
@@ -166,6 +171,7 @@ header .navbar {
 ============================================================ */
 .hero {
   padding: 40px 20px;
+  padding-top: 100px;
 }
 
 /* Side-by-side layout: text on left, image on right */
@@ -552,4 +558,3 @@ header .navbar {
   }
 
 }
-
