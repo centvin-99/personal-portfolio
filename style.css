@@ -191,7 +191,8 @@ header .navbar {
 /* Name displayed in red with a monospace font */
 .hero-text h1 {
   margin-bottom: 20px;
-  color: darkred;
+  font-weight:bold;
+  color: white;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -561,4 +562,5 @@ header .navbar {
   }
 
 }
+
 
