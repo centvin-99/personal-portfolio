@@ -177,7 +177,7 @@ header .navbar {
 /* Side-by-side layout: text on left, image on right */
 .hero-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
   margin: auto;
@@ -198,14 +198,17 @@ header .navbar {
 .hero-image {
   display: flex;
   justify-content: center;
+   
 }
 
 /* Profile image: fixed width, red border, subtle shadow */
 .hero-image img {
-  width: 35vw;
-  border-radius: 12px;
-  border: 2px solid #CC003A;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+   width: 35vw;
+	max-width:100%;
+	height:auto;
+   border-radius: 12px;
+   border: 2px solid #CC003A;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* Italic CTA text above the contact button */
@@ -558,3 +561,4 @@ header .navbar {
   }
 
 }
+
