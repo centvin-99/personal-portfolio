@@ -193,7 +193,7 @@ header .navbar {
   margin-bottom: 20px;
   font-weight:bold;
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: monospace;
 }
 
 .hero-image {
@@ -205,8 +205,8 @@ header .navbar {
 /* Profile image: fixed width, red border, subtle shadow */
 .hero-image img {
    width: 35vw;
-	max-width:100%;
-	height:auto;
+   max-width:100%;
+   height:auto;
    border-radius: 12px;
    border: 2px solid #CC003A;
    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
